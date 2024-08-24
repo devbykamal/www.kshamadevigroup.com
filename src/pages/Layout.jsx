@@ -6,6 +6,7 @@ function Layout() {
     return <>
         <Nav />
         <Outlet />
+    
     </>
 }
 export default Layout
