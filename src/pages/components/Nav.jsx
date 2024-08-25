@@ -106,9 +106,9 @@ function Nav() {
                                 }`}
                             style={{ left: '50%', transform: 'translateX(-50%)' }}
                         >
-                            <a href="#" className="block px-4 py-2 hover:bg-[#843135] hover:text-white transition-colors duration-300">
+                              <Link to="/introduction" className="block px-4 py-2 hover:bg-[#843135] hover:text-white transition-colors duration-300">
                                 Introduction
-                            </a>
+                            </Link>
                             <a href="#" className="block px-4 py-2 hover:bg-[#843135] hover:text-white transition-colors duration-300">
                                 Board of Directors
                             </a>
@@ -123,11 +123,11 @@ function Nav() {
                             </a>
                         </div>
                     </div>
-                    <a href="#" className="hover:text-[#843135]">Projects</a>
-                    <a href="#" className="hover:text-[#843135]">Contact Us</a>
-                    <a href="#" className="hover:text-[#843135]">Dealers</a>
-                    <a href="#" className="hover:text-[#843135]">CSR</a>
-                    <a href="#" className="hover:text-[#843135]">Gallery</a>
+                    <Link to="/Projects" className="hover:text-[#843135]">Projects</Link>
+                    <Link to="/Contact" className="hover:text-[#843135]">Contact Us</Link>
+                    <Link to="/Dealers" className="hover:text-[#843135]">Dealers</Link>
+                    <Link to="/CSR" className="hover:text-[#843135]">CSR</Link>
+                    <Link to="/Gallery" className="hover:text-[#843135]">Gallery</Link>
                 </div>
 
                 {/* Search and Shop Now Buttons */}

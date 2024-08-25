@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import 'leaflet/dist/leaflet.css';
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
@@ -7,6 +8,9 @@ import Forget from "./pages/components/Forget";
 import Register from "./pages/components/Register";
 import Cart from "./pages/components/Cart";
 import Products from "./pages/Products";
+import Contact from "./pages/Contact";
+import Introduction from "./pages/Introduction";
+
 function App() {
 
   return (
@@ -20,9 +24,9 @@ function App() {
             <Route path="/Forget" element={<Forget />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/products" element={<Products/>} />
-
-
+            <Route path="/products" element={<Products />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/introduction" element={<Introduction />} />
           </Route>
         </Routes>
       </BrowserRouter>
