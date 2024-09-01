@@ -32,54 +32,93 @@ function Products() {
 
   return (
     <>
-      <div className="flex mr-10 ml-10 gap-20">
-        <div className="bg-fuchsia-300 h-[200px] w-[200px]">
+      <div className="flex flex-wrap mx-4 sm:mx-10 gap-6">
+        {/* Optional Empty Div for Future Content */}
+        <div className="hidden"></div>
 
-        </div>
-        <div className="bg-white mt-7 flex flex-col p-10 sm:w-full max-w-auto mx-auto">
+        {/* Featured Products Section */}
+        <div className="bg-white mt-7 flex flex-col p-6 sm:w-full max-w-auto mx-auto">
           <div className="flex justify-between items-center">
-            <h2 className="text-[#843135] text-[20px]">Featured Product</h2>
+            <h2 className="text-[#843135] text-lg sm:text-xl">Featured Product</h2>
             <div className="flex mt-2 md:mt-0">
               <button
                 onClick={handlePrev}
-                className="mr-3 sm:mr-6 border-2 border-[#843135] text-[#843135] w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center cursor-pointer transition duration-300 ease-in-out hover:bg-[#843135] group"
+                className="mr-2 sm:mr-4 border-2 border-[#843135] text-[#843135] w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center cursor-pointer transition duration-300 ease-in-out hover:bg-[#843135] group"
               >
-                <ArrowBigLeftDashIcon className="w-6 sm:w-8 h-6 sm:h-8 transition-colors duration-300 ease-in-out group-hover:text-white" />
+                <ArrowBigLeftDashIcon className="w-5 sm:w-6 h-5 sm:h-6 transition-colors duration-300 ease-in-out group-hover:text-white" />
               </button>
               <button
                 onClick={handleNext}
                 className="border-2 border-[#843135] text-[#843135] w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center cursor-pointer transition duration-300 ease-in-out hover:bg-[#843135] group"
               >
-                <ArrowBigRightDashIcon className="w-6 sm:w-8 h-6 sm:h-8 transition-colors duration-300 ease-in-out group-hover:text-white" />
+                <ArrowBigRightDashIcon className="w-5 sm:w-6 h-5 sm:h-6 transition-colors duration-300 ease-in-out group-hover:text-white" />
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 p-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
             <div className="bg-gray-200 h-[330px] relative shadow-sm hover:shadow-xl">
               <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
                 Code : GH2525
               </span>
               <div className="overflow-hidden">
-                <img src={products7} alt="" className="h-[280px] w-full transition-transform duration-500 hover:scale-110" />
+                <img
+                  src={products7}
+                  alt="Product"
+                  className="h-[280px] w-full transition-transform duration-500 hover:scale-110"
+                />
               </div>
               <div>
-                <span className="flex flex-col">
-                  <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                  <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
+                <span className="flex flex-col ">
+                  <a href="#" className="bg-white p-2 hover:text-[#843135]">
+                    FOUR POLE RCCB
+                  </a>
+                  <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">
+                    FOUR POLE RCCB
+                  </span>
                 </span>
               </div>
             </div>
-            <div className="bg-gray-200 h-[330px] relative shadow-sm hover:shadow-xl">
+            <div className="bg-gray-200 h-[330px] relative shadow-sm hover:shadow-xl max-sm:mt-5">
               <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
                 Code : GH2525
               </span>
               <div className="overflow-hidden">
-                <img src={products7} alt="" className="h-[280px] w-full transition-transform duration-500 hover:scale-110" />
+                <img
+                  src={products7}
+                  alt="Product"
+                  className="h-[280px] w-full transition-transform duration-500 hover:scale-110"
+                />
               </div>
               <div>
                 <span className="flex flex-col">
-                  <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                  <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
+                  <a href="#" className="bg-white p-2 hover:text-[#843135]">
+                    FOUR POLE RCCB
+                  </a>
+                  <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">
+                    FOUR POLE RCCB
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div className="bg-gray-200 h-[330px] relative shadow-sm hover:shadow-xl max-sm:mt-5">
+              <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
+                Code : GH2525
+              </span>
+              <div className="overflow-hidden">
+                <img
+                  src={products7}
+                  alt="Product"
+                  className="h-[280px] w-full transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div>
+                <span className="flex flex-col">
+                  <a href="#" className="bg-white p-2 hover:text-[#843135]">
+                    FOUR POLE RCCB
+                  </a>
+                  <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">
+                    FOUR POLE RCCB
+                  </span>
                 </span>
               </div>
             </div>
