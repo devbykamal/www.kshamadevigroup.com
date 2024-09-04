@@ -14,6 +14,7 @@ import products12 from "./img/products12.jpg";
 import products13 from "./img/products13.jpg";
 import products14 from "./img/products14.jpg";
 import products15 from "./img/products15.jpg";
+import './components/dropright.css';
 
 function Products() {
   const logos = [logo1, logo2, logo3, logo4, logo5];
@@ -28,8 +29,8 @@ function Products() {
   };
 
   useEffect(() => {
-    const interval = setInterval(handleNext, 3000); // Change images every 3 seconds
-    return () => clearInterval(interval); // Cleanup on component unmount
+    const interval = setInterval(handleNext, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   const visibleLogos = [
@@ -38,13 +39,59 @@ function Products() {
     logos[(currentIndex + 2) % logos.length],
   ];
 
+  const renderProduct = (product, code) => (
+    <div className="bg-gray-200 h-[330px] relative shadow-sm hover:shadow-xl max-sm:mt-5">
+      <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
+        Code : {code}
+      </span>
+      <div className="overflow-hidden">
+        <img
+          src={product}
+          alt="Product"
+          className="h-[280px] w-full transition-transform duration-500 hover:scale-110"
+        />
+      </div>
+      <div>
+        <span className="flex flex-col">
+          <a href="#" className="bg-white p-2 hover:text-[#843135]">
+            FOUR POLE RCCB
+          </a>
+          <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">
+            FOUR POLE RCCB
+          </span>
+        </span>
+      </div>
+    </div>
+  );
+
   return (
     <>
-      <div className="flex flex-wrap mx-4 sm:mx-10 gap-6">
-        {/* Optional Empty Div for Future Content */}
-        <div className="hidden"></div>
+      <div className="flex mx-4 sm:mx-10 gap-6 justify-between ">
+        <div className="category mt-7" id="all_select">
+          <div className="header">
+            <h3 className="category-header bg-[#843135] max-w-[220px] p-2 mb-1 box-border font-bold text-left">Categories</h3>
+          </div>
+          {["Light", "BUILDING MATERIALS", "TILES AND MARBLES", "HARDWARE", "INTERIOR", "CONSTRUCTION", "CONSTRUCTION MART"].map((category, i) => (
+            <div key={i} className="parent" style={{ textAlign: "left" }}>
+              {category}
+              <div className="child">
+                {[1, 2, 3].map((child) => (
+                  <div key={child} className="child_parent">
+                    Child {child}
+                    <div className="child_parent_child">
+                      {[1, 2, 3].map((grandchild) => (
+                        <div key={grandchild} className="child_item">
+                          Child's {child} Child {grandchild}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
 
-        {/* Featured Products Section */}
         <div className="bg-white mt-7 flex flex-col p-6 sm:w-full max-w-auto mx-auto">
           <div className="flex justify-between items-center">
             <h2 className="text-[#843135] text-lg sm:text-xl">Featured Product</h2>
@@ -63,77 +110,13 @@ function Products() {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
-            <div className="bg-gray-200 h-[330px] relative shadow-sm hover:shadow-xl">
-              <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-                Code : GH2525
-              </span>
-              <div className="overflow-hidden">
-                <img
-                  src={products7}
-                  alt="Product"
-                  className="h-[280px] w-full transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              <div>
-                <span className="flex flex-col ">
-                  <a href="#" className="bg-white p-2 hover:text-[#843135]">
-                    FOUR POLE RCCB
-                  </a>
-                  <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">
-                    FOUR POLE RCCB
-                  </span>
-                </span>
-              </div>
-            </div>
-            <div className="bg-gray-200 h-[330px] relative shadow-sm hover:shadow-xl max-sm:mt-5">
-              <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-                Code : GH2525
-              </span>
-              <div className="overflow-hidden">
-                <img
-                  src={products8}
-                  alt="Product"
-                  className="h-[280px] w-full transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              <div>
-                <span className="flex flex-col">
-                  <a href="#" className="bg-white p-2 hover:text-[#843135]">
-                    FOUR POLE RCCB
-                  </a>
-                  <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">
-                    FOUR POLE RCCB
-                  </span>
-                </span>
-              </div>
-            </div>
-            <div className="bg-gray-200 h-[330px] relative shadow-sm hover:shadow-xl max-sm:mt-5">
-              <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-                Code : GH2525
-              </span>
-              <div className="overflow-hidden">
-                <img
-                  src={products9}
-                  alt="Product"
-                  className="h-[280px] w-full transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              <div>
-                <span className="flex flex-col">
-                  <a href="#" className="bg-white p-2 hover:text-[#843135]">
-                    FOUR POLE RCCB
-                  </a>
-                  <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">
-                    FOUR POLE RCCB
-                  </span>
-                </span>
-              </div>
-            </div>
-            {/* Repeat for other products */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 p-4">
+            {renderProduct(products8, "GH2525")}
+            {renderProduct(products9, "GH2525")}
           </div>
         </div>
       </div>
+
       <div className="bg-white mt-7 flex flex-col p-4 sm:w-full max-w-[1000px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center w-full">
           <h2 className="text-lg sm:text-xl font-semibold text-[#843135]">Our Brands</h2>
@@ -163,6 +146,7 @@ function Products() {
           ))}
         </div>
       </div>
+
       <div className="bg-white mt-7 flex flex-col p-4 max-w-[1000px] mx-auto">
         <div className="flex items-center justify-between">
           <h2 className="text-[#843135] font-bold">Other Products</h2>
@@ -175,175 +159,18 @@ function Products() {
           </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products11} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products10} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products12} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products13} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products14} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products15} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products7} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products8} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products9} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products10} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products11} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          <div className="bg-gray-200 h-[330px] relative shadow-xl hover:shadow-2xl">
-            <span className="bg-[#843135] p-1 text-[12px] text-white absolute top-0 right-0">
-              Code : GH2525
-            </span>
-            <div className="overflow-hidden">
-              <img src={products12} alt="" className="h-[250px] w-full transition-transform duration-500 hover:scale-110" />
-            </div>
-            <div>
-              <span className="flex flex-col">
-                <a href="#" className="bg-white p-2 hover:text-[#843135]">FOUR POLE RCCB</a>
-                <span className="bg-[#f5f5f5] hover:text-[#843135] p-2">FOUR POLE RCCB</span>
-              </span>
-            </div>
-          </div>
-          {/* Repeat for other products */}
+          {renderProduct(products11, "GH2525")}
+          {renderProduct(products10, "GH2525")}
+          {renderProduct(products12, "GH2525")}
+          {renderProduct(products13, "GH2525")}
+          {renderProduct(products14, "GH2525")}
+          {renderProduct(products15, "GH2525")}
+          {renderProduct(products7, "GH2525")}
+          {renderProduct(products8, "GH2525")}
+          {renderProduct(products9, "GH2525")}
+          {renderProduct(products10, "GH2525")}
+          {renderProduct(products11, "GH2525")}
+          {renderProduct(products12, "GH2525")}
         </div>
       </div>
     </>
