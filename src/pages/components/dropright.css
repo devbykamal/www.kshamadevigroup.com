@@ -12,18 +12,20 @@
     color: white;
     box-sizing: border-box;
     gap: 1px;
+    margin-top: 30px;
 }
 
 .parent,
 .child_parent {
     position: relative;
-    width: 200px;
+    width: 240px;
+    
 }
 
 .child {
     position: absolute;
     top: 0;
-    left: 200px;
+    left: 240px;
     width: 200px;
     display: none;
     flex-direction: column;
@@ -38,7 +40,7 @@
 .child_parent_child {
     position: absolute;
     top: 0;
-    left: 200px;
+    left: 240px;
     width: 200px;
     display: none;
     flex-direction: column;
