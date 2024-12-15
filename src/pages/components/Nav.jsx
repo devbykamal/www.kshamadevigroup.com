@@ -10,7 +10,7 @@ import {
     X,
     ChevronDown
 } from "lucide-react";
-import logo from "../img/logo.jpg";
+import logo from "../img/newlogo.png";
 import { Link } from 'react-router-dom';
 
 function Nav() {
@@ -57,7 +57,7 @@ function Nav() {
                     <span className="flex gap-2 items-center">
                         <MailIcon size={15} />
                         <span className="max-lg:hidden">Email:</span>
-                        info@kshamadevigroup.com
+                        info@Durga and Dinesh traders.com
                     </span>
                 </div>
                 <div className="flex gap-10 max-lg:gap-3">
@@ -106,7 +106,7 @@ function Nav() {
                                 }`}
                             style={{ left: '50%', transform: 'translateX(-50%)' }}
                         >
-                              <Link to="/introduction" className="block px-4 py-2 hover:bg-[#843135] hover:text-white transition-colors duration-300">
+                            <Link to="/introduction" className="block px-4 py-2 hover:bg-[#843135] hover:text-white transition-colors duration-300">
                                 Introduction
                             </Link>
                             <a href="#" className="block px-4 py-2 hover:bg-[#843135] hover:text-white transition-colors duration-300">
@@ -125,7 +125,7 @@ function Nav() {
                     </div>
                     <Link to="/Projects" className="hover:text-[#843135]">Projects</Link>
                     <Link to="/Contact" className="hover:text-[#843135]">Contact Us</Link>
-                    <Link to="/Dealers" className="hover:text-[#843135]">Dealers</Link>
+                    <Link to="/Dealers" className="hover:text-[#84313">Dealers</Link>
                     <Link to="/CSR" className="hover:text-[#843135]">CSR</Link>
                     <Link to="/Gallery" className="hover:text-[#843135]">Gallery</Link>
                 </div>
@@ -164,7 +164,9 @@ function Nav() {
                     >
                         Shop Now
                     </a>
+
                 </div>
+
             </div>
         </div>
     );

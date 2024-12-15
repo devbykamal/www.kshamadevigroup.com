@@ -82,7 +82,7 @@ function Home() {
                     <img src={img1} alt="uPVC Windows & Doors" className="z-0" />
                     <div className="absolute bottom-5 left-0 right-0 bg-gray-800 bg-opacity-50 text-white h-[170px] w-[650px] ml-10 max-sm:hidden">
                         <p className='ml-12 mt-2'>
-                            <span className='text-[20px]'> Welcome to</span> <span className='font-bold text-[28px]'> kshamadevigroup</span>
+                            <span className='text-[20px]'> Welcome to</span> <span className='font-bold text-[28px]'> Durga and Dinesh traders</span>
                         </p>
                         <h2 className='ml-12 font-bold text-[28px]'>uPVC Windows & Doors</h2>
                         <a
@@ -95,7 +95,7 @@ function Home() {
                     </div>
                     <div className="bg-[#843135] text-white h-[250px] w-[100%] md:hidden">
                         <p className='ml-5 mt-2'>
-                            <span className='text-[20px]'> Welcome to</span> <span className='font-bold text-[25px]'> kshamadevigroup</span>
+                            <span className='text-[20px]'> Welcome to</span> <span className='font-bold text-[25px]'> Durga and Dinesh traders</span>
                         </p>
                         <h2 className='ml-5 font-bold text-[22px]'>uPVC Windows & Doors</h2>
                         <a
