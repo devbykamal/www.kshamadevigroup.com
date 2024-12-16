@@ -51,7 +51,7 @@ function Nav() {
                 <div className="flex gap-5 max-sm:hidden">
                     <span className="flex gap-2 items-center ml-4">
                         <Phone size={16} />
-                        01-6633306/6632137
+                        091-561152/ 9848448624
                         <span className="max-lg:hidden">| Contact</span>
                     </span>
                     <span className="flex gap-2 items-center">
